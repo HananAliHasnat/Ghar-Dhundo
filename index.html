@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GharDhundo — GB Rental Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════ -->
+<nav>
+  <a class="nav-logo" href="#">Ghar<span>Dhundo</span></a>
+  <ul class="nav-links">
+    <li><a href="#listings">Browse</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#list">List Property</a></li>
+    <li><a href="#ai">AI Features</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="#" class="btn btn-ghost">Sign In</a>
+    <a href="#" class="btn btn-primary">Get Started</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <!-- Mountain silhouette decoration -->
+  <svg class="hero-mountain" viewBox="0 0 900 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 500 L150 280 L230 340 L380 120 L460 210 L560 60 L660 190 L740 130 L900 300 L900 500 Z" fill="currentColor"/>
+    <path d="M0 500 L100 380 L200 420 L340 260 L420 320 L520 180 L600 250 L700 200 L800 310 L900 260 L900 500 Z" fill="currentColor" opacity="0.5"/>
+  </svg>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">🏔️ Gilgit-Baltistan's First AI Rental Portal</div>
+    <h1 class="hero-title">Find Your <em>Perfect</em><br/>Home in GB</h1>
+    <p class="hero-sub">Connecting students, families, and landlords across Gilgit-Baltistan through intelligent, transparent, and effortless property search.</p>
+    <div class="hero-actions">
+      <a href="#listings" class="btn btn-primary btn-lg">🔍 Browse Listings</a>
+      <a href="#list" class="btn btn-ghost btn-lg">List Your Property</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">240<span>+</span></div>
+        <div class="stat-label">Active Listings</div>
+      </div>
+      <div>
+        <div class="stat-num">1.2<span>k</span></div>
+        <div class="stat-label">Tenants Helped</div>
+      </div>
+      <div>
+        <div class="stat-num">98<span>%</span></div>
+        <div class="stat-label">Satisfaction Rate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SEARCH CARD
+════════════════════════════════════════════ -->
+<div class="search-section" id="listings">
+  <div class="search-card">
+    <div class="search-tabs">
+      <button class="search-tab active" onclick="setTab(this)">All Properties</button>
+      <button class="search-tab" onclick="setTab(this)">Rooms</button>
+      <button class="search-tab" onclick="setTab(this)">Houses</button>
+      <button class="search-tab" onclick="setTab(this)">Hostels</button>
+    </div>
+    <div class="search-row">
+      <div class="search-field">
+        <label>Location</label>
+        <input type="text" placeholder="e.g. Near KIU, Jutial..." />
+      </div>
+      <div class="search-field">
+        <label>Property Type</label>
+        <select>
+          <option>Any Type</option>
+          <option>Room</option>
+          <option>House</option>
+          <option>Hostel</option>
+          <option>Apartment</option>
+        </select>
+      </div>
+      <div class="search-field">
+        <label>Max Rent (PKR)</label>
+        <select>
+          <option>Any Price</option>
+          <option>Under 5,000</option>
+          <option>Under 10,000</option>
+          <option>Under 20,000</option>
+          <option>Under 40,000</option>
+        </select>
+      </div>
+      <div class="search-actions">
+        <button class="voice-btn" title="Voice Search" onclick="voiceSearch()">🎤</button>
+        <button class="btn btn-primary btn-lg">Search →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     AI PRICE INSIGHTS STRIP
+════════════════════════════════════════════ -->
+<div class="price-strip">
+  <div class="price-strip-label">🤖 AI Price Insights</div>
+  <div class="price-pill">Room near KIU <strong>4,500–8,000 PKR</strong></div>
+  <div class="price-pill">Jutial 1-BR <strong>12,000–18,000 PKR</strong></div>
+  <div class="price-pill">Hostel bed <strong>3,000–5,000 PKR</strong></div>
+  <div class="price-pill">2-BR House <strong>25,000–40,000 PKR</strong></div>
+  <div class="price-pill">Danyore Room <strong>3,500–6,000 PKR</strong></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     FEATURED LISTINGS
+════════════════════════════════════════════ -->
+<section>
+  <div class="section-header fade-in">
+    <div>
+      <div class="section-label">Available Now</div>
+      <h2 class="section-title">Featured Properties</h2>
+    </div>
+    <a href="#" class="btn btn-ghost">View All Listings →</a>
+  </div>
+
+  <div class="cards-grid">
+
+    <!-- Card 1 — Room -->
+    <div class="property-card fade-in">
+      <div class="card-img">
+        <div class="card-img-inner" style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&auto=format&fit=crop')"></div>
+        <div class="card-badge room">Room</div>
+        <div class="card-fav">♡</div>
+      </div>
+      <div class="card-body">
+        <div class="card-price">7,500 PKR <sub>/ month</sub></div>
+        <div class="card-title">Furnished Room Near KIU Campus</div>
+        <div class="card-location">📍 Jutial, Gilgit</div>
+        <div class="card-features">
+          <span class="feat-tag">WiFi</span>
+          <span class="feat-tag">Furnished</span>
+          <span class="feat-tag">Attached Bath</span>
+          <span class="ai-badge">✦ AI Match 94%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 — House -->
+    <div class="property-card fade-in">
+      <div class="card-img">
+        <div class="card-img-inner" style="background-image:url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&auto=format&fit=crop')"></div>
+        <div class="card-badge house">House</div>
+        <div class="card-fav">♡</div>
+      </div>
+      <div class="card-body">
+        <div class="card-price">32,000 PKR <sub>/ month</sub></div>
+        <div class="card-title">3-Bedroom Family House</div>
+        <div class="card-location">📍 Danyore, Gilgit</div>
+        <div class="card-features">
+          <span class="feat-tag">Parking</span>
+          <span class="feat-tag">Garden</span>
+          <span class="feat-tag">3 Rooms</span>
+          <span class="ai-badge">✦ AI Match 87%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 — Hostel -->
+    <div class="property-card fade-in">
+      <div class="card-img">
+        <div class="card-img-inner" style="background-image:url('https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&auto=format&fit=crop')"></div>
+        <div class="card-badge hostel">Hostel</div>
+        <div class="card-fav">♡</div>
+      </div>
+      <div class="card-body">
+        <div class="card-price">4,000 PKR <sub>/ month</sub></div>
+        <div class="card-title">Boys Hostel — KIU Area</div>
+        <div class="card-location">📍 Aga Khan Road, Gilgit</div>
+        <div class="card-features">
+          <span class="feat-tag">Meals</span>
+          <span class="feat-tag">Laundry</span>
+          <span class="feat-tag">WiFi</span>
+          <span class="ai-badge">✦ AI Match 91%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 — Room -->
+    <div class="property-card fade-in">
+      <div class="card-img">
+        <div class="card-img-inner" style="background-image:url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&auto=format&fit=crop')"></div>
+        <div class="card-badge room">Room</div>
+        <div class="card-fav">♡</div>
+      </div>
+      <div class="card-body">
+        <div class="card-price">5,500 PKR <sub>/ month</sub></div>
+        <div class="card-title">Single Room — City Centre</div>
+        <div class="card-location">📍 Shahrah-e-Quaid-e-Azam</div>
+        <div class="card-features">
+          <span class="feat-tag">WiFi</span>
+          <span class="feat-tag">Security</span>
+          <span class="ai-badge">✦ Fair Price ✓</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5 — House -->
+    <div class="property-card fade-in">
+      <div class="card-img">
+        <div class="card-img-inner" style="background-image:url('https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&auto=format&fit=crop')"></div>
+        <div class="card-badge house">House</div>
+        <div class="card-fav">♡</div>
+      </div>
+      <div class="card-body">
+        <div class="card-price">18,000 PKR <sub>/ month</sub></div>
+        <div class="card-title">2-Bedroom House with View</div>
+        <div class="card-location">📍 Kargah, Gilgit</div>
+        <div class="card-features">
+          <span class="feat-tag">Mountain View</span>
+          <span class="feat-tag">2 Rooms</span>
+          <span class="feat-tag">Kitchen</span>
+          <span class="ai-badge">✦ AI Match 79%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6 — Hostel -->
+    <div class="property-card fade-in">
+      <div class="card-img">
+        <div class="card-img-inner" style="background-image:url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&auto=format&fit=crop')"></div>
+        <div class="card-badge hostel">Hostel</div>
+        <div class="card-fav">♡</div>
+      </div>
+      <div class="card-body">
+        <div class="card-price">4,500 PKR <sub>/ month</sub></div>
+        <div class="card-title">Girls Hostel — Safe & Secure</div>
+        <div class="card-location">📍 Jutial, Gilgit</div>
+        <div class="card-features">
+          <span class="feat-tag">All-Female</span>
+          <span class="feat-tag">Meals</span>
+          <span class="feat-tag">CCTV</span>
+          <span class="ai-badge">✦ AI Match 96%</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     AI FEATURES
+════════════════════════════════════════════ -->
+<section class="features-section" id="ai">
+  <div class="section-label fade-in">Powered by Artificial Intelligence</div>
+  <h2 class="section-title fade-in">Smart Features for<br/>Smarter Search</h2>
+
+  <div class="features-grid">
+    <div class="feature-card fade-in">
+      <div class="feat-icon orange">🎯</div>
+      <div class="feat-title">AI Recommendation Engine</div>
+      <div class="feat-desc">Learns your preferences and behavior to suggest the most relevant properties — so you spend less time scrolling and more time deciding.</div>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feat-icon blue">💬</div>
+      <div class="feat-title">24/7 AI Chatbot</div>
+      <div class="feat-desc">Ask anything, anytime. Our chatbot handles property queries, booking help, and general questions — available round the clock in Urdu or English.</div>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feat-icon gold">📊</div>
+      <div class="feat-title">Price Prediction Model</div>
+      <div class="feat-desc">Every listing is analyzed against similar properties to detect overpricing. Look for the "Fair Price ✓" badge to rent with confidence.</div>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feat-icon green">🎤</div>
+      <div class="feat-title">Voice Search</div>
+      <div class="feat-desc">Just speak your need — "Show me rooms near KIU under 10,000 PKR" — and the system finds matches instantly. Hands-free, effortless search.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     HOW IT WORKS
+════════════════════════════════════════════ -->
+<section id="how">
+  <div class="section-label fade-in">Simple Process</div>
+  <h2 class="section-title fade-in">How It Works</h2>
+
+  <div class="steps-row">
+    <div class="step fade-in">
+      <div class="step-num">01</div>
+      <div class="step-title">Create Account</div>
+      <div class="step-desc">Sign up as a tenant or landlord in under a minute. No paperwork needed.</div>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">02</div>
+      <div class="step-title">Search or List</div>
+      <div class="step-desc">Browse listings with smart filters, or post your property with photos and details.</div>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">03</div>
+      <div class="step-title">AI Matches You</div>
+      <div class="step-desc">Our recommendation engine surfaces the best options based on your needs and preferences.</div>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">04</div>
+      <div class="step-title">Connect & Move In</div>
+      <div class="step-desc">Contact landlords directly through the platform, book, and settle in — stress free.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     LIST YOUR PROPERTY
+════════════════════════════════════════════ -->
+<section class="list-section" id="list">
+  <div class="list-inner">
+
+    <!-- Left: Benefits -->
+    <div class="fade-in">
+      <div class="section-label">For Landlords</div>
+      <h2 class="section-title">List Your Property<br/>in Minutes</h2>
+      <p class="list-desc">Reach hundreds of students and families actively looking for accommodation in Gilgit-Baltistan. Get verified, fill vacancies faster, and let AI handle the rest.</p>
+      <ul class="benefits-list">
+        <li><span class="check">✓</span> Free to list — no hidden charges</li>
+        <li><span class="check">✓</span> Admin verification for trust & safety</li>
+        <li><span class="check">✓</span> AI-driven pricing suggestions included</li>
+        <li><span class="check">✓</span> Direct messaging with tenants</li>
+      </ul>
+    </div>
+
+    <!-- Right: Form -->
+    <div class="list-form fade-in">
+      <div class="form-title">Post a Listing</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Ali Hassan" />
+        </div>
+        <div class="form-group">
+          <label>Phone / WhatsApp</label>
+          <input type="text" placeholder="+92 3xx xxxxxxx" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Property Title</label>
+        <input type="text" placeholder="e.g. Furnished Room Near KIU" />
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Type</label>
+          <select>
+            <option>Room</option>
+            <option>House</option>
+            <option>Hostel Bed</option>
+            <option>Apartment</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Monthly Rent (PKR)</label>
+          <input type="number" placeholder="e.g. 8000" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Location / Area</label>
+        <input type="text" placeholder="e.g. Jutial, near main bazaar" />
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea rows="3" placeholder="Describe amenities, rules, proximity to landmarks..."></textarea>
+      </div>
+      <div class="form-group">
+        <label>Photos</label>
+        <div class="upload-zone" onclick="this.querySelector('input').click()">
+          📷 Click to upload photos (JPG, PNG)
+          <input type="file" multiple accept="image/*" style="display:none" />
+        </div>
+      </div>
+      <button class="btn btn-primary btn-lg btn-full">Submit Listing →</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════════════ -->
+<section>
+  <div class="section-label fade-in">Real Experiences</div>
+  <h2 class="section-title fade-in">What Users Are Saying</h2>
+
+  <div class="testimonials-grid">
+
+    <div class="testimonial-card fade-in">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"I was admitted to KIU from Skardu and had no idea where to look for a room. GharDhundo found me a furnished room near campus in less than a day. The AI suggestions were spot-on!"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar avatar-blue">A</div>
+        <div>
+          <div class="author-name">Aamir Hussain</div>
+          <div class="author-role">KIU Student, CS 2nd Year</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card fade-in">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"We moved from Skardu to Gilgit for my husband's job. Finding a family house was always stressful. This platform made it so easy — filtered by area and budget, contacted landlord directly."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar avatar-orange">F</div>
+        <div>
+          <div class="author-name">Fatima Batool</div>
+          <div class="author-role">Family Tenant, Danyore</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card fade-in">
+      <div class="stars">★★★★☆</div>
+      <p class="testimonial-text">"I listed my two rooms and had interested tenants within 3 days. The admin verified my property quickly and the price prediction showed my rent was fair. Very professional platform."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar avatar-green">M</div>
+        <div>
+          <div class="author-name">Muhammad Rafiq</div>
+          <div class="author-role">Landlord, Jutial</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="nav-logo" href="#">Ghar<span>Dhundo</span></a>
+      <p>Gilgit-Baltistan's first AI-powered rental portal. Connecting students, families, and landlords across the region — smarter, faster, and fairer.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="#">Browse Listings</a></li>
+        <li><a href="#">List Property</a></li>
+        <li><a href="#">AI Features</a></li>
+        <li><a href="#">Price Check</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">How It Works</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Safety Tips</a></li>
+        <li><a href="#">Report Issue</a></li>
+        <li><a href="#">Terms & Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 GharDhundo — Gilgit-Baltistan Rental Portal. Built for KIU & GB Community.</span>
+    <span class="footer-tag">🏔️ Made in GB, for GB</span>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     CHATBOT WIDGET
+════════════════════════════════════════════ -->
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header">
+    <div class="chat-avatar">🤖</div>
+    <div class="chat-header-info">
+      <div class="chat-name">GharBot — AI Assistant</div>
+      <div class="chat-status">
+        <span class="status-dot"></span> Online 24/7
+      </div>
+    </div>
+    <button class="chat-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="msg bot">
+      <div class="msg-bubble">Assalam-o-Alaikum! 👋 I'm GharBot. I can help you find rooms, houses, or hostels in Gilgit-Baltistan. What are you looking for?</div>
+    </div>
+    <div class="msg bot">
+      <div class="msg-bubble">Try asking: "Show me rooms near KIU under 8,000 PKR" or "List available hostels in Jutial"</div>
+    </div>
+  </div>
+  <div class="chat-input-row">
+    <input class="chat-input" id="chatInput" type="text" placeholder="Ask about rooms, price, location..." />
+    <button class="chat-send" id="chatSendBtn">↑</button>
+  </div>
+</div>
+
+<button class="chatbot-fab" id="chatFab">💬</button>
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>
